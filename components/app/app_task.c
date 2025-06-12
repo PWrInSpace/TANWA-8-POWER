@@ -6,9 +6,7 @@
 #include "esp_log.h"
 
 #include "can_api.h"
-#include "LTC4421_controller.h"
-#include "TPS2121_controller.h"
-#include "24V_SOL_controller.h"
+
 
 #define APP_TASK_STACK_SIZE CONFIG_APP_TASK_STACK_SIZE
 #define APP_TASK_PRIORITY CONFIG_APP_TASK_PRIORITY
@@ -37,40 +35,14 @@ esp_err_t app_task_deinit(void) {
     
     return ESP_OK;
 }
-esp_err_t init_voltage_controllers(void)
-{
-    esp_err_t stat = ESP_OK;
 
-    stat = init_24V();
-    if (stat != ESP_OK) {
-        return stat;
-    }
-    vTaskDelay(50 / portTICK_PERIOD_MS);
-
-    stat = init_12V();
-    if (stat != ESP_OK) {
-        return stat;
-    }
-    vTaskDelay(50 / portTICK_PERIOD_MS);
-
-    stat = init_24V_SOL();
-    if (stat != ESP_OK) {
-        return stat;
-    }
-    vTaskDelay(50 / portTICK_PERIOD_MS);
-
-    return stat;
-}
 
 void app_task(void *arg) {
 
     // YOUR IMAGINATION IS THE ONLY LIMITATION
     while(1) {
 
-        if(init_voltage_controllers()!=ESP_OK)
-        {
-            ESP_LOGE(TAG,"VOLTAGE CONTROLELRS NOT INITIALZIED");
-        }
+        
         
     }
 }

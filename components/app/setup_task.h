@@ -6,5 +6,5 @@
 void setup_task(void *arg);
 esp_err_t setup_task_init(void);
 esp_err_t setup_task_deinit(void);
-
+esp_err_t init_voltage_controllers(void);
 #endif //PWRINSPACE_CAN_TASK_H

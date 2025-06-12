@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "TANWA-SLAVE-TEMPLATE",
-    "project_version":    "119a0f8-dirty",
+    "project_version":    "fddfe86-dirty",
     "project_path":       "C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER",
     "idf_path":           "C:/Users/Matteo/esp/v5.2.1/esp-idf",
     "build_dir":          "C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER",
