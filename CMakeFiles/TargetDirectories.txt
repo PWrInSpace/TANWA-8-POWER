@@ -635,6 +635,13 @@ C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER/esp-idf/main/CMakeFil
 C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER/esp-idf/main/CMakeFiles/install.dir
 C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER/esp-idf/main/CMakeFiles/install/local.dir
 C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER/esp-idf/main/CMakeFiles/install/strip.dir
+C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER/esp-idf/Board_Data/CMakeFiles/__idf_Board_Data.dir
+C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER/esp-idf/Board_Data/CMakeFiles/edit_cache.dir
+C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER/esp-idf/Board_Data/CMakeFiles/rebuild_cache.dir
+C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER/esp-idf/Board_Data/CMakeFiles/list_install_components.dir
+C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER/esp-idf/Board_Data/CMakeFiles/install.dir
+C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER/esp-idf/Board_Data/CMakeFiles/install/local.dir
+C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER/esp-idf/Board_Data/CMakeFiles/install/strip.dir
 C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER/esp-idf/mcu_config/CMakeFiles/__idf_mcu_config.dir
 C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER/esp-idf/mcu_config/CMakeFiles/edit_cache.dir
 C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER/esp-idf/mcu_config/CMakeFiles/rebuild_cache.dir
