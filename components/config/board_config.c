@@ -31,7 +31,7 @@ void _led_delay(uint32_t _ms) {
 }
 
 board_config_t config = {
-    .board_name = "TANWA_BOARD", //CHANGE TO REAL BOARD NAME
+    .board_name = "TANWA_POWER", //CHANGE TO REAL BOARD NAME
     .status_led = {
         ._gpio_set_level = _mcu_gpio_set_level,
         ._delay = _led_delay,
