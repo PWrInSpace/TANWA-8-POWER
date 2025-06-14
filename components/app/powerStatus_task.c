@@ -46,7 +46,7 @@ void power_mng_task(void *pvParameters)
     // Validate ADC pins
     if (channel_i_sense < 0 || channel_24v_sen < 0 || channel_12v_sen < 0) {
         ESP_LOGE(TAG, "Invalid ADC pin configuration. Exiting task.");
-        adc_cali_delete_scheme_line_fitting(adc_cali_handle);
+        adc_cali_delete_scheme_curve_fitting(adc_cali_handle);
         adc_oneshot_del_unit(adc_handle);
         vTaskDelete(NULL);
         return;
@@ -106,7 +106,7 @@ void power_mng_task(void *pvParameters)
     }
 
     // Cleanup (unreachable due to infinite loop)
-    adc_cali_delete_scheme_line_fitting(adc_cali_handle);
+    adc_cali_delete_scheme_curve_fitting(adc_cali_handle);
     adc_oneshot_del_unit(adc_handle);
     vSemaphoreDelete(BoardDataSemaphore);
 }

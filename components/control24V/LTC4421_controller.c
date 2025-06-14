@@ -9,6 +9,7 @@
  * 
  */
 #include "LTC4421_controller.h"
+#include "esp_log.h"
 
 
 esp_err_t init_24V(void)
@@ -27,15 +28,21 @@ esp_err_t init_24V(void)
         GPIO_DISABLE_2
     };
 
+    // 🛠️ First configure output pins
     for (int i = 0; i < sizeof(output_pins)/sizeof(output_pins[0]); i++) {
         io_conf.pin_bit_mask = 1ULL << output_pins[i];
         gpio_config(&io_conf);
-        gpio_set_level(output_pins[i], 0);  // Optional: initialize LOW
     }
 
-    // Configure input pins for status
+    // ✅ Now set output levels
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_RETRY, 0));      // Default: LOW (no retry)
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_SHDN, 1));       // Default: HIGH (system active)
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_DISABLE_1, 1));  // Default: HIGH (channel enabled)
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_DISABLE_2, 1));  // Default: HIGH (channel enabled)
+
+    // ⚙️ Now configure input pins
     io_conf.mode = GPIO_MODE_INPUT;
-    io_conf.pull_up_en = GPIO_PULLUP_ENABLE;  // Enable pull-up for input stability
+    io_conf.pull_up_en = GPIO_PULLUP_ENABLE;
     io_conf.pull_down_en = GPIO_PULLDOWN_DISABLE;
 
     gpio_num_t input_pins[] = {

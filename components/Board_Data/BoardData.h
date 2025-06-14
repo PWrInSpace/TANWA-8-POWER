@@ -1,5 +1,8 @@
 #pragma once
+#include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
 #include "stdbool.h"
+
 typedef struct {
     bool ch1_status;
     bool fault_1_status;
@@ -13,3 +16,4 @@ typedef struct {
 } BoardData_t;
 
 extern BoardData_t BoardData;
+extern SemaphoreHandle_t BoardDataSemaphore;

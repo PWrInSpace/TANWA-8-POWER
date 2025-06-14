@@ -9,9 +9,20 @@
 
 #define TAG "CAN_CONFIG"
 
+esp_err_t new_command_handler(uint8_t *data, uint8_t length) {
+    // Example: just print received data
+    printf("New command received with length %d\n", length);
+    for (int i = 0; i < length; ++i) {
+        printf("Byte %d: %02X\n", i, data[i]);
+    }
+
+    // Return success
+    return ESP_OK;
+}
+
 can_command_t can_commands[] = {
     // Example command registration
-    //{CAN_TEMPLATE_MESSAGE_ID, example_command_handler},
+    {CAN_TEMPLATE_MESSAGE_ID, new_command_handler},
     // Add your CAN commands here
 };
 

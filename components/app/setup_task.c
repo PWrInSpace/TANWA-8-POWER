@@ -10,6 +10,8 @@
 #include "LTC4421_controller.h"
 #include "TPS2121_controller.h"
 #include "24V_SOL_controller.h"
+#include "console_config.h"
+#include "console.h"
 
 #define SETUP_TASK_STACK_SIZE CONFIG_SETUP_TASK_STACK_SIZE
 #define SETUP_TASK_PRIORITY CONFIG_SETUP_TASK_PRIORITY
@@ -28,8 +30,8 @@ void setup_task(void *arg) {
         ESP_LOGE(TAG, "Board configuration failed");
         vTaskDelete(NULL);
     }
-    
-    // Start the app task
+    ESP_LOGI(TAG, "DEBUG");
+ //    Start the app task
     if(app_task_init() != ESP_OK) {
         ESP_LOGE(TAG, "Failed to initialize app task");
         vTaskDelete(NULL);
@@ -39,7 +41,9 @@ void setup_task(void *arg) {
         ESP_LOGE(TAG,"VOLTAGE CONTROLELRS NOT INITIALZIED");
         vTaskDelete(NULL);
     }
-    
+  //}
+  ESP_LOGI(TAG, "SETUP DONE");
+  //  
     // Delete the setup task
     vTaskDelete(NULL);
 }

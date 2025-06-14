@@ -41,13 +41,13 @@ static bool adc_init(void) {
     ESP_ERROR_CHECK(adc_oneshot_del_unit(adc_handle));
 
     // Configure ADC calibration
-    adc_cali_line_fitting_config_t cali_config = {
+    adc_cali_curve_fitting_config_t cali_config = {
         .unit_id = ADC_UNIT_2,
         .atten = ADC_ATTEN_DB_12, // 0–3.3V range
         .bitwidth = ADC_BITWIDTH_12,
     };
 
-    ret = adc_cali_create_scheme_line_fitting(&cali_config, &adc_cali_handle);
+    ret = adc_cali_create_scheme_curve_fitting(&cali_config, &adc_cali_handle);
     if (ret != ESP_OK) {
         ESP_LOGE(tag1, "Failed to initialize ADC calibration: %s", esp_err_to_name(ret));
         adc_oneshot_del_unit(adc_handle);

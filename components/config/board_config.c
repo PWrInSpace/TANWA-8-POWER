@@ -46,7 +46,7 @@ esp_err_t board_config_init(void) {
     esp_err_t err;
     
     err = mcu_gpio_init();
-
+    
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "GPIO initialization failed");
         return err;
@@ -67,7 +67,7 @@ esp_err_t board_config_init(void) {
     }
 
     err = console_config_init();
-
+    
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Console initialization failed");
         return err;

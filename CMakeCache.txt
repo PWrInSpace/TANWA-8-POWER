@@ -14,25 +14,19 @@
 # EXTERNAL cache entries
 ########################
 
-//No help, variable specified on the command line.
-CCACHE_ENABLE:UNINITIALIZED=1
+//Path to a program.
+CMAKE_ADDR2LINE:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-addr2line.exe
 
 //Path to a program.
-CCACHE_FOUND:FILEPATH=C:/Users/Matteo/.espressif/tools/ccache/4.8/ccache-4.8-windows-x86_64/ccache.exe
-
-//Path to a program.
-CMAKE_ADDR2LINE:FILEPATH=C:/msys64/ucrt64/bin/addr2line.exe
-
-//Path to a program.
-CMAKE_AR:FILEPATH=C:/msys64/ucrt64/bin/ar.exe
+CMAKE_AR:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ar.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_ASM_COMPILER_AR:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ar.exe
+CMAKE_ASM_COMPILER_AR:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar.exe
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_ASM_COMPILER_RANLIB:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc-ranlib.exe
+CMAKE_ASM_COMPILER_RANLIB:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib.exe
 
 //ASM Compiler Base Flags
 CMAKE_ASM_FLAGS:STRING='-mlongcalls '
@@ -54,18 +48,18 @@ CMAKE_ASM_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 CMAKE_BUILD_TYPE:STRING=
 
 //CXX compiler
-CMAKE_CXX_COMPILER:STRING=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-g++.exe
+CMAKE_CXX_COMPILER:STRING=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_AR:FILEPATH=C:/msys64/ucrt64/bin/gcc-ar.exe
+CMAKE_CXX_COMPILER_AR:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar.exe
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_RANLIB:FILEPATH=C:/msys64/ucrt64/bin/gcc-ranlib.exe
+CMAKE_CXX_COMPILER_RANLIB:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib.exe
 
 //C++ Compiler Base Flags
-CMAKE_CXX_FLAGS:STRING='-mlongcalls -Wno-frame-address '
+CMAKE_CXX_FLAGS:STRING='-mlongcalls '
 
 //Flags used by the CXX compiler during DEBUG builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=-g
@@ -79,22 +73,19 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
-//Libraries linked by default with all C++ applications.
-CMAKE_CXX_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-
 //C compiler
-CMAKE_C_COMPILER:STRING=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc.exe
+CMAKE_C_COMPILER:STRING=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_C_COMPILER_AR:FILEPATH=C:/msys64/ucrt64/bin/gcc-ar.exe
+CMAKE_C_COMPILER_AR:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar.exe
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_C_COMPILER_RANLIB:FILEPATH=C:/msys64/ucrt64/bin/gcc-ranlib.exe
+CMAKE_C_COMPILER_RANLIB:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib.exe
 
 //C Compiler Base Flags
-CMAKE_C_FLAGS:STRING='-mlongcalls -Wno-frame-address '
+CMAKE_C_FLAGS:STRING='-mlongcalls '
 
 //Flags used by the C compiler during DEBUG builds.
 CMAKE_C_FLAGS_DEBUG:STRING=-g
@@ -107,9 +98,6 @@ CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the C compiler during RELWITHDEBINFO builds.
 CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
-
-//Libraries linked by default with all C applications.
-CMAKE_C_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
 
 //Path to a program.
 CMAKE_DLLTOOL:FILEPATH=C:/msys64/ucrt64/bin/dlltool.exe
@@ -134,9 +122,6 @@ CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER/CMakeFiles/pkgRedirects
-
-//Convert GNU import libraries to MS format (requires Visual Studio)
-CMAKE_GNUtoMS:BOOL=OFF
 
 //User executables (bin)
 CMAKE_INSTALL_BINDIR:PATH=bin
@@ -175,7 +160,7 @@ CMAKE_INSTALL_MANDIR:PATH=
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files/TANWA-SLAVE-TEMPLATE
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/TANWA-SLAVE-TEMPLATE
 
 //Run-time variable data (LOCALSTATEDIR/run)
 CMAKE_INSTALL_RUNSTATEDIR:PATH=
@@ -190,10 +175,10 @@ CMAKE_INSTALL_SHAREDSTATEDIR:PATH=com
 CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 
 //Path to a program.
-CMAKE_LINKER:FILEPATH=C:/msys64/ucrt64/bin/ld.exe
+CMAKE_LINKER:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ld.exe
 
 //Program used to build from build.ninja files.
-CMAKE_MAKE_PROGRAM:FILEPATH=C:/ST/STM32CubeCLT_1.18.0/Ninja/bin/ninja.exe
+CMAKE_MAKE_PROGRAM:FILEPATH=C:/Users/Matteo/.espressif/tools/ninja/1.11.1/ninja.exe
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -216,13 +201,13 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_NM:FILEPATH=C:/msys64/ucrt64/bin/nm.exe
+CMAKE_NM:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-nm.exe
 
 //Path to a program.
-CMAKE_OBJCOPY:FILEPATH=C:/msys64/ucrt64/bin/objcopy.exe
+CMAKE_OBJCOPY:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-objcopy.exe
 
 //Path to a program.
-CMAKE_OBJDUMP:FILEPATH=C:/msys64/ucrt64/bin/objdump.exe
+CMAKE_OBJDUMP:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-objdump.exe
 
 //Value Computed by CMake
 CMAKE_PROJECT_DESCRIPTION:STATIC=
@@ -234,28 +219,10 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 CMAKE_PROJECT_NAME:STATIC=TANWA-SLAVE-TEMPLATE
 
 //Path to a program.
-CMAKE_RANLIB:FILEPATH=C:/msys64/ucrt64/bin/ranlib.exe
-
-//RC compiler
-CMAKE_RC_COMPILER:FILEPATH=C:/msys64/ucrt64/bin/windres.exe
-
-//Flags for Windows Resource Compiler during all build types.
-CMAKE_RC_FLAGS:STRING=
-
-//Flags for Windows Resource Compiler during DEBUG builds.
-CMAKE_RC_FLAGS_DEBUG:STRING=
-
-//Flags for Windows Resource Compiler during MINSIZEREL builds.
-CMAKE_RC_FLAGS_MINSIZEREL:STRING=
-
-//Flags for Windows Resource Compiler during RELEASE builds.
-CMAKE_RC_FLAGS_RELEASE:STRING=
-
-//Flags for Windows Resource Compiler during RELWITHDEBINFO builds.
-CMAKE_RC_FLAGS_RELWITHDEBINFO:STRING=
+CMAKE_RANLIB:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ranlib.exe
 
 //Path to a program.
-CMAKE_READELF:FILEPATH=C:/msys64/ucrt64/bin/readelf.exe
+CMAKE_READELF:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-readelf.exe
 
 //Flags used by the linker during the creation of shared libraries
 // during all build types.
@@ -305,13 +272,10 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_STRIP:FILEPATH=C:/msys64/ucrt64/bin/strip.exe
-
-//Path to a program.
-CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
+CMAKE_STRIP:FILEPATH=C:/Users/Matteo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-strip.exe
 
 //The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=C:/Users/Matteo/esp/v5.2.1/esp-idf/tools/cmake/toolchain-esp32.cmake
+CMAKE_TOOLCHAIN_FILE:FILEPATH=C:/Users/Matteo/esp/v5.2.1/esp-idf/tools/cmake/toolchain-esp32s3.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -328,9 +292,6 @@ ENABLE_PROGRAMS:BOOL=
 //Build Mbed TLS tests.
 ENABLE_TESTING:BOOL=
 
-//No help, variable specified on the command line.
-ESP_PLATFORM:UNINITIALIZED=1
-
 //Generate the auto-generated files as needed
 GEN_FILES:BOOL=
 
@@ -338,7 +299,7 @@ GEN_FILES:BOOL=
 GIT_EXECUTABLE:FILEPATH=C:/Users/Matteo/.espressif/tools/idf-git/2.39.2/cmd/git.exe
 
 //IDF Build Target
-IDF_TARGET:STRING=esp32
+IDF_TARGET:STRING=esp32s3
 
 //IDF Build Toolchain Type
 IDF_TOOLCHAIN:STRING=gcc
@@ -369,15 +330,6 @@ Mbed TLS_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 Mbed TLS_SOURCE_DIR:STATIC=C:/Users/Matteo/esp/v5.2.1/esp-idf/components/mbedtls/mbedtls
-
-//No help, variable specified on the command line.
-PYTHON:UNINITIALIZED=C:\Users\Matteo\.espressif\python_env\idf5.2_py3.11_env\Scripts\python.exe
-
-//No help, variable specified on the command line.
-PYTHON_DEPS_CHECKED:UNINITIALIZED=1
-
-//No help, variable specified on the command line.
-SDKCONFIG:UNINITIALIZED=c:\Users\Matteo\Desktop\PWR_IN_SPACE\TANWA+8\TANWA-8-POWER\sdkconfig
 
 //Value Computed by CMake
 TANWA-SLAVE-TEMPLATE_BINARY_DIR:STATIC=C:/Users/Matteo/Desktop/PWR_IN_SPACE/TANWA+8/TANWA-8-POWER
@@ -475,8 +427,6 @@ CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_RELWITHDEBINFO
 CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_CXX_STANDARD_LIBRARIES
-CMAKE_CXX_STANDARD_LIBRARIES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER
 CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_AR
@@ -493,14 +443,12 @@ CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
 CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_C_STANDARD_LIBRARIES
-CMAKE_C_STANDARD_LIBRARIES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_DLLTOOL
 CMAKE_DLLTOOL-ADVANCED:INTERNAL=1
 //Path to cache edit program executable.
-CMAKE_EDIT_COMMAND:INTERNAL=C:/ST/STM32CubeCLT_1.18.0/CMake/bin/cmake-gui.exe
+CMAKE_EDIT_COMMAND:INTERNAL=C:/Users/Matteo/.espressif/tools/cmake/3.24.0/bin/cmake-gui.exe
 //Executable file format
-CMAKE_EXECUTABLE_FORMAT:INTERNAL=Unknown
+CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
 CMAKE_EXE_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_DEBUG
@@ -575,7 +523,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=98
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=99
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -584,19 +532,6 @@ CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_RANLIB
 CMAKE_RANLIB-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_RC_COMPILER
-CMAKE_RC_COMPILER-ADVANCED:INTERNAL=1
-CMAKE_RC_COMPILER_WORKS:INTERNAL=1
-//ADVANCED property for variable: CMAKE_RC_FLAGS
-CMAKE_RC_FLAGS-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_RC_FLAGS_DEBUG
-CMAKE_RC_FLAGS_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_RC_FLAGS_MINSIZEREL
-CMAKE_RC_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_RC_FLAGS_RELEASE
-CMAKE_RC_FLAGS_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_RC_FLAGS_RELWITHDEBINFO
-CMAKE_RC_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_READELF
 CMAKE_READELF-ADVANCED:INTERNAL=1
 //Path to CMake installation.
@@ -627,8 +562,6 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_STRIP
 CMAKE_STRIP-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_TAPI
-CMAKE_TAPI-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
@@ -649,10 +582,8 @@ HAVE_SYS_TYPES_H:INTERNAL=1
 HAVE_TIME_T_SIZE:INTERNAL=TRUE
 //CHECK_TYPE_SIZE: sizeof(time_t)
 TIME_T_SIZE:INTERNAL=8
-//linker supports push/pop state
-_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files/TANWA-SLAVE-TEMPLATE
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/TANWA-SLAVE-TEMPLATE
 _Python3_EXECUTABLE:INTERNAL=C:/Users/Matteo/.espressif/python_env/idf5.2_py3.11_env/Scripts/python.exe
 //Python3 Properties
 _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;2;32;;;C:\Users\Matteo\.espressif\tools\idf-python\3.11.2\Lib;C:\Users\Matteo\.espressif\tools\idf-python\3.11.2\Lib;C:\Users\Matteo\.espressif\python_env\idf5.2_py3.11_env\Lib\site-packages;C:\Users\Matteo\.espressif\python_env\idf5.2_py3.11_env\Lib\site-packages

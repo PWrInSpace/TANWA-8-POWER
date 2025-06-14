@@ -18,4 +18,7 @@ typedef enum {
 * REGISTER THEM IN can_config.c FILE
 */
 
+
+
+
 #endif //PWRINSPACE_CAN_COMMANDS_H
