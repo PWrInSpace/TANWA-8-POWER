@@ -1,0 +1,179 @@
+menu "TANWA BOARD CONFIGURATION"
+
+    menu "TASK CONFIGURATION"
+
+        menu "SETUP TASK"
+
+            config SETUP_TASK_STACK_SIZE
+                int "Stack size"
+                default 4096
+                help
+                    Stack size for setup task.
+            
+            config SETUP_TASK_PRIORITY
+                int "Priority"
+                default 5
+                help
+                    Priority for setup task.
+
+            config SETUP_TASK_CORE_ID
+                int "Core ID"
+                default 0
+                help
+                    Core ID for setup task.
+            
+        endmenu
+
+        menu "CAN TASK"
+
+            config CAN_TASK_STACK_SIZE
+                int "Stack size"
+                default 4096
+                help
+                    Stack size for CAN task.
+            
+            config CAN_TASK_PRIORITY
+                int "Priority"
+                default 5
+                help
+                    Priority for CAN task.
+
+            config CAN_TASK_CORE_ID
+                int "Core ID"
+                default 0
+                help
+                    Core ID for CAN task.
+
+        endmenu
+
+        menu "APP TASK"
+
+            config APP_TASK_STACK_SIZE
+                int "Stack size"
+                default 4096
+                help
+                    Stack size for main task.
+            
+            config APP_TASK_PRIORITY
+                int "Priority"
+                default 5
+                help
+                    Priority for main task.
+
+            config APP_TASK_CORE_ID
+                int "Core ID"
+                default 1
+                help
+                    Core ID for main task.
+
+        endmenu
+    endmenu
+
+    menu "GPIO CONFIGURATION"
+
+        config GPIO_LED
+            int "LED GPIO"
+            default 46
+            help
+                GPIO number for LED.
+        
+    endmenu
+
+    menu "CAN CONFIGURATION"
+
+        config CAN_RX_GPIO
+            int "TWAI RX PIN"
+            default 20
+            help
+                GPIO number for TWAI RX pin.
+        
+        config CAN_TX_GPIO
+            int "CAN TX PIN"
+            default 19
+            help
+                GPIO number for TWAI TX pin.
+        config CAN_STB_GPIO
+            int "CAN_STB GPIO pin"
+            default 8
+
+        config CAN_TX_QUEUE_LENGTH
+            int "TX Queue Length"
+            default 10
+            help
+                Length of the TX queue for CAN messages.
+
+        config CAN_RX_QUEUE_LENGTH
+            int "RX Queue Length"
+            default 10
+            help
+                Length of the RX queue for CAN messages.
+        
+        config TWAI_ACCEPTANCE_CODE
+            int "Acceptance Code"
+            default 0
+            help
+                Acceptance code for TWAI filter.
+        
+        config TWAI_ACCEPTANCE_MASK
+            int "Acceptance Mask"
+            default 2147483647
+            help
+                Acceptance mask for TWAI filter.
+    endmenu
+
+menu "24V STATUS Pins"
+config CH1_STATUS
+    int "CH1 GPIO pin"
+    default 9
+config FAULT_1_STATUS
+    int "FAULT_1 GPIO pin"
+    default 10
+config FAULT_2_STATUS
+    int "FAULT_2 GPIO pin"
+    default 11
+config CH2_STATUS
+    int "CH2 GPIO pin"
+    default 12
+endmenu
+
+
+menu "24V CONTROL Pins"
+config RETRY_GPIO
+    int "RETRY GPIO pin"
+    default 35
+config SHDN_GPIO
+    int "SHDN GPIO pin"
+    default 36
+config DISABLE_1_GPIO
+    int "DISABLE_1 GPIO pin"
+    default 37
+config DISABLE_2_GPIO
+    int "DISABLE_2 GPIO pin"
+    default 38
+config SOL_EN_GPIO
+    int "24V_SOL_EN GPIO pin"
+    default 17
+endmenu
+
+menu "Analog & Sense Pins"
+config I_SENSE_24V_GPIO
+    int "I_SENSE_24V GPIO pin"
+    default 16
+config I_SENSE_12V_GPIO
+    int "I_SENSE_12V GPIO pin"
+    default 21
+config 24V_SEN_GPIO
+    int "24V_SEN GPIO pin"
+    default 18
+config 12V_SEN_GPIO
+    int "12V_SEN GPIO pin"
+    default 48
+endmenu
+
+menu "12V Logic Pins"
+config SEL_12V_IN_GPIO
+    int "12V_SEL_IN GPIO pin"
+    default 47
+endmenu
+
+endmenu
