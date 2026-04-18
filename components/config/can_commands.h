@@ -4,6 +4,7 @@
 /** PLACE YOUR CAN CALLBACKS AND CAN MESSAGES HERE IN FORMAT*/
 typedef enum {
     CAN_TEMPLATE_MESSAGE_ID = 0xFF,
+    CAN_SEND_POWER_STATUS_MESSAGE_ID = 0x01,
  /*    CAN_MSG_ID_1 = ...,
  *     CAN_MSG_ID_2 = ...,
  *     CAN_MSG_ID_3 = ...,
