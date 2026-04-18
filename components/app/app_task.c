@@ -41,8 +41,7 @@ void app_task(void *arg) {
 
     // YOUR IMAGINATION IS THE ONLY LIMITATION
     while(1) {
-        ESP_LOGI("APP_TASK", "App task working");
+       // ESP_LOGI("APP_TASK", "App task working");
         vTaskDelay(1000 / portTICK_PERIOD_MS);
-        
-    }
+}
 }

@@ -12,6 +12,7 @@
 #include "24V_SOL_controller.h"
 #include "console_config.h"
 #include "console.h"
+#include "powerStatus_task.h"
 
 #define SETUP_TASK_STACK_SIZE CONFIG_SETUP_TASK_STACK_SIZE
 #define SETUP_TASK_PRIORITY CONFIG_SETUP_TASK_PRIORITY
@@ -78,19 +79,32 @@ esp_err_t init_voltage_controllers(void)
     if (stat != ESP_OK) {
         return stat;
     }
+    ESP_LOGI(TAG,"24V VOLTAGE CONTROLLERS INITIALIZED");
     vTaskDelay(50 / portTICK_PERIOD_MS);
 
     stat = init_12V();
     if (stat != ESP_OK) {
         return stat;
     }
+    ESP_LOGI(TAG,"V12V OLTAGE CONTROLLERS INITIALIZED");
     vTaskDelay(50 / portTICK_PERIOD_MS);
 
     stat = init_24V_SOL();
     if (stat != ESP_OK) {
         return stat;
     }
+    ESP_LOGI(TAG,"24V SOL VOLTAGE CONTROLLERS INITIALIZED");
     vTaskDelay(50 / portTICK_PERIOD_MS);
+
+    stat = power_mng_task_init();
+    if (stat!=ESP_OK)
+    {
+        ESP_LOGE(TAG,"POWER MANAGEMENT TASK NOT INITIALIZED");
+        return stat;
+    }
+    ESP_LOGI(TAG,"POWER MANAGEMENT TASK INITIALIZED");
+    vTaskDelay(50 / portTICK_PERIOD_MS);
+    
 
     return stat;
 }
