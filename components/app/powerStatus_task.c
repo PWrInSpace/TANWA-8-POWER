@@ -108,11 +108,6 @@ void convert_from_voltage_divider(float voltage_in, float *voltage_out , float m
 void power_mng_task(void *pvParameters)
 {
 
-    if (BoardDataSemaphore == NULL) {
-        BoardDataSemaphore = xSemaphoreCreateMutex();
-        xSemaphoreGive(BoardDataSemaphore);
-    }
-
     // Inicjalizacja ADC
     if (mcu_adc_init() != ESP_OK) {
         ESP_LOGE(TAG, "MCU ADC initialization failed!");
@@ -147,8 +142,8 @@ float i_sense_5V = 0.0f, i_sense_24V_SOL = 0.0f, voltage_24V = 0.0f, voltage_24V
         convert_from_voltage_divider(i_sense_5V, &BoardData.Current5V_in, 1.0f);
         convert_from_voltage_divider(voltage_24V_SOL, &BoardData.Voltage24VSOL_in, 10.68f);
         convert_from_voltage_divider(i_sense_24V_SOL, &BoardData.Current24VSOL_in, 1.0f);
-        
-        display_power_table(&BoardData);
+      
+      display_power_table(&BoardData);
     
         xSemaphoreGive(BoardDataSemaphore);
     } else {

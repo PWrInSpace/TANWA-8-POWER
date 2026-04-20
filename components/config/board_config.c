@@ -23,6 +23,7 @@
 #include "mcu_twai_config.h"
 #include "can_config.h"
 #include "console_config.h"
+#include "BoardData.h"
 
 #define TAG "BOARD_CONFIG"
 
@@ -58,7 +59,10 @@ esp_err_t board_config_init(void) {
         ESP_LOGE(TAG, "TWAI initialization failed");
         return err;
     }
-
+    if (BoardDataSemaphore == NULL) {
+        BoardDataSemaphore = xSemaphoreCreateMutex();
+        xSemaphoreGive(BoardDataSemaphore);
+    }
     err = can_config_init();
 
     if (err != ESP_OK) {

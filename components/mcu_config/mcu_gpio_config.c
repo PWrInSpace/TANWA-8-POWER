@@ -11,12 +11,19 @@
 #define TAG "MCU_GPIO"
 
 static mcu_gpio_config_t mcu_gpio_config = {
-    .pins = {LED_GPIO},
+    .pins = {LED_GPIO, CAN_STB},
     .num_pins = MAX_GPIO_INDEX,
     .configs = {
         {
             .pin_bit_mask = (1ULL << LED_GPIO),
             .mode = GPIO_MODE_OUTPUT_OD,
+            .pull_up_en = GPIO_PULLUP_DISABLE,
+            .pull_down_en = GPIO_PULLDOWN_DISABLE,
+            .intr_type = GPIO_INTR_DISABLE,
+        },
+        {
+            .pin_bit_mask = (1ULL << CAN_STB),
+            .mode = GPIO_MODE_OUTPUT,
             .pull_up_en = GPIO_PULLUP_DISABLE,
             .pull_down_en = GPIO_PULLDOWN_DISABLE,
             .intr_type = GPIO_INTR_DISABLE,

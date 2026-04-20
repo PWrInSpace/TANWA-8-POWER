@@ -5,6 +5,10 @@
 typedef enum {
     CAN_TEMPLATE_MESSAGE_ID = 0xFF,
     CAN_SEND_POWER_STATUS_MESSAGE_ID = 0x01,
+    CAN_POWER_DATA_ID = 0x3B00,
+
+    //RX FROM COM
+    CAN_POWER_GET_DATA_ID = 0x0BE0,
  /*    CAN_MSG_ID_1 = ...,
  *     CAN_MSG_ID_2 = ...,
  *     CAN_MSG_ID_3 = ...,

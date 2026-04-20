@@ -23,26 +23,34 @@ esp_err_t new_command_handler(uint8_t *data, uint8_t length) {
 }
 
 esp_err_t power_status_command_handler(uint8_t *data, uint8_t length) {
+    uint8_t tx_buffer[8] = {0}; // Lokalny bezpieczny bufor
+
     xSemaphoreTake(BoardDataSemaphore, portMAX_DELAY);
     uint16_t v24V     = (uint16_t)(BoardData.Voltage24V_in * 1000.0f + 0.5f);
     uint16_t v24VSOL  = (uint16_t)(BoardData.Voltage24VSOL_in * 1000.0f + 0.5f);
     uint16_t i5V      = (uint16_t)(BoardData.Current5V_in * 1000.0f + 0.5f);
     uint16_t i24VSOL  = (uint16_t)(BoardData.Current24VSOL_in * 1000.0f + 0.5f);
-xSemaphoreGive(BoardDataSemaphore);
-    memcpy(data, &v24V, 2);
-    memcpy(data + 2, &v24VSOL, 2);
-    memcpy(data + 4, &i5V, 2);
-    memcpy(data + 6, &i24VSOL, 2);
+    xSemaphoreGive(BoardDataSemaphore);
 
-    ESP_LOGI(TAG, "CAN SENT POWER STATUS: 24V=%.2fV, 24V-SOL=%.2fV, 5V Current=%.2fmA, 24V-SOL Current=%.2fmA", 
-             BoardData.Voltage24V_in, BoardData.Voltage24VSOL_in, BoardData.Current5V_in * 1000.0f, BoardData.Current24VSOL_in * 1000.0f);
+    memcpy(&tx_buffer[0], &v24V, 2);
+    memcpy(&tx_buffer[2], &v24VSOL, 2);
+    memcpy(&tx_buffer[4], &i5V, 2);
+    memcpy(&tx_buffer[6], &i24VSOL, 2);
+
+    // Wysyłamy tx_buffer, nie data!
+    can_send_message(CAN_POWER_DATA_ID, tx_buffer, 8);
+
+    ESP_LOGI(TAG, "Raw data sent: %02X %02X %02X %02X %02X %02X %02X %02X",
+             tx_buffer[0], tx_buffer[1], tx_buffer[2], tx_buffer[3], 
+             tx_buffer[4], tx_buffer[5], tx_buffer[6], tx_buffer[7]);
+             
     return ESP_OK;
 }
 
 can_command_t can_commands[] = {
     // Example command registration
     {CAN_TEMPLATE_MESSAGE_ID, new_command_handler},
-    {CAN_SEND_POWER_STATUS_MESSAGE_ID, power_status_command_handler},
+    {CAN_POWER_GET_DATA_ID, power_status_command_handler},
     // Add your CAN commands here
 };
 
