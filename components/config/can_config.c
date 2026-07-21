@@ -47,10 +47,22 @@ esp_err_t power_status_command_handler(uint8_t *data, uint8_t length) {
     return ESP_OK;
 }
 
+esp_err_t power_status_handler(uint8_t *data, uint8_t length) {
+
+    ESP_LOGI(TAG, "Power status command received, preparing response...");
+    uint8_t data_send[8] = {0};
+    data_send[0] = BoardData.ch1_status ? 1 : 0;
+    data_send[1] = BoardData.fault_1_status ? 1 : 0;
+    data_send[2] = BoardData.fault_2_status ? 1 : 0;
+    can_send_message(CAN_POWER_STATUS_ID, data_send, 3);
+    return ESP_OK;
+}
+
 can_command_t can_commands[] = {
     // Example command registration
     {CAN_TEMPLATE_MESSAGE_ID, new_command_handler},
     {CAN_POWER_GET_DATA_ID, power_status_command_handler},
+    {CAN_POWER_GET_STATUS_ID, power_status_handler},
     // Add your CAN commands here
 };
 
